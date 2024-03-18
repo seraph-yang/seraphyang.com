@@ -1,0 +1,27 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import AwardsBox from "../../components/AwardBox.astro";
+import { getCollection } from "astro:content";
+const awards = (await getCollection("awards")).sort(
+  (a, b) =>
+    new Date(b.data.publishedAt).getTime() -
+    new Date(a.data.publishedAt).getTime()
+);
+---
+
+<Layout og_type="website">
+  <div>
+    {
+      awards.map((research) => (
+        <>
+          <div class="divider my-2" />
+          <AwardsBox
+            title={research.data.title}
+            publishedAt={research.data.publishedAt}
+            description={research.data.description}
+          />
+        </>
+      ))
+    }
+  </div>
+</Layout>

@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PostBox from "../../components/PostBox.astro";
+import { getCollection } from "astro:content";
+const research_papers = (await getCollection("research")).sort(
+  (a, b) =>
+    new Date(b.data.publishedAt).getTime() -
+    new Date(a.data.publishedAt).getTime()
+);
+---
+
+<Layout og_type="website">
+  <div>
+    {
+      research_papers.map((research) => (
+        <>
+          <div class="divider my-2" />
+          <PostBox
+            title={research.data.title}
+            publishedAt={research.data.publishedAt}
+            description={research.data.description}
+            href={research.slug}
+          />
+        </>
+      ))
+    }
+  </div>
+</Layout>
