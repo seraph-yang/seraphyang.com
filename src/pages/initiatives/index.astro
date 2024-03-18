@@ -2,7 +2,6 @@
 import Layout from "../../layouts/Layout.astro";
 import InitiativeBox from "../../components/InitiativeBox.astro";
 import { getCollection } from "astro:content";
-import InitiativeBox from "../../components/InitiativeBox.astro";
 const initiatives = (await getCollection("initiatives")).sort(
   (a, b) =>
     new Date(b.data.publishedAt).getTime() -
