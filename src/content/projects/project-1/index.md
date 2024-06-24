@@ -7,8 +7,31 @@ tags:
 - Java
 - Assembly
 - C
-demoUrl: https://github.com/seraph-yang/y86-simulator
 repoUrl: https://github.com/seraph-yang/y86-simulator
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+Project consists of two parts, an assembler and processor.
+
+### Assembler
+Translates assembly language into machine code. Converts human-readable C code into hexadecimal code that the CPU can read.
+
+Assembler supports:
+- 1 : 1 mapping of instructions to encodings
+- resolves symbolic names
+- supports the following directives
+    - .pos x
+    - .align x
+    - .long x
+
+### Processor
+Simulates the 5 sequential stages of the Y86 processor. Shows how the simulator reads each line from memory and pipelines through every stage.
+
+Processor shows the following stages:
+- fetch
+- decode
+- execute
+- memory
+- writeback
+- pc update
+
+Processor also shows state of temporary storage registers after each instruction.
