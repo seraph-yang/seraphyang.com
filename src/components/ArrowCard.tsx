@@ -2,7 +2,7 @@ import { formatDate } from "@lib/utils"
 import type { CollectionEntry } from "astro:content"
 
 type Props = {
-  entry: CollectionEntry<"research"> | CollectionEntry<"projects">
+  entry: CollectionEntry<"projects">
   pill?: boolean
 }
 
@@ -10,16 +10,6 @@ export default function ArrowCard({entry, pill}: Props) {
     return (
       <a href={`/${entry.collection}/${entry.slug}`} class="group p-4 gap-3 flex items-center border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
       <div class="w-full group-hover:text-black group-hover:dark:text-white blend">
-        <div class="flex flex-wrap items-center gap-2">
-          {pill &&
-            <div class="text-sm capitalize px-2 py-0.5 rounded-full border border-black/15 dark:border-white/25">
-              {entry.collection === "research" ? "post" : "project"}
-            </div>
-          }
-          <div class="text-sm uppercase">
-            {formatDate(entry.data.date)}
-          </div>
-        </div>
         <div class="font-semibold mt-3 text-black dark:text-white">
           {entry.data.title}
         </div>
