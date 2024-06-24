@@ -5,7 +5,7 @@ seraph's portfolio website :D
 git clone https://github.com/seraph-yang/seraphyang.com.git
 ```
 ### setup
-- install dependencies: `pnpm install`
-- start dev server: `pnpm run dev`
+- install dependencies: `npm install`
+- start dev server: `npm run dev`
 ### view demo
 demo site: [seraphyang.com](https://seraphyang.com)
