@@ -1,10 +1,11 @@
-import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
-import { loadEnv } from "vite";
+import { defineConfig } from "astro/config"
+import mdx from "@astrojs/mdx"
+import sitemap from "@astrojs/sitemap"
+import tailwind from "@astrojs/tailwind"
+import solidJs from "@astrojs/solid-js"
 
 // https://astro.build/config
 export default defineConfig({
-  prefetch: true,
-  integrations: [tailwind()],
-  site: "https://tahir.sh",
-});
+  site: "https://astro-sphere-demo.vercel.app",
+  integrations: [mdx(), sitemap(), solidJs(), tailwind({ applyBaseStyles: false })],
+})
