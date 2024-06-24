@@ -5,6 +5,7 @@ import TopLayout from "@layouts/TopLayout.astro"
 import BottomLayout from "@layouts/BottomLayout.astro"
 import Search from "@components/Search"
 import { SEARCH } from "@consts"
+import { any } from "astro/zod"
 
 const posts = (await getCollection("blog"))
   .filter(post => !post.data.draft)
